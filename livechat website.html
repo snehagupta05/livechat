@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>social media</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/6c5bac228a.js" crossorigin="anonymous"></script>
+</head>
+       <style> 
+    *{
+    margin:0;
+    padding:0;
+    font-family: 'poppins' , sans-serif;
+    box-sizing: border-box;
+ }
+
+  :root{
+      --body-color: #efefef;
+      --nav-color: #1876f2;
+      --bg-color: #fff;
+  }
+
+  .dark-theme{
+    --body-color: #0a0a0a;
+      --nav-color:#000;
+      --bg-color: #000;
+
+            
+  }
+
+
+ body{
+    background: var(--body-color);
+    transition: background 0.3s;
+ }
+ nav{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background: var(--nav-color);
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+ }
+ .logo{
+    width: 160px;
+    margin-right: 45px;
+ }
+ .nav-left, .nav-right{
+    display: flex;
+    align-items: center;
+ }
+ .nav-left ul i{
+    list-style: none;
+    display: inline-block;
+    color:#cbdffa;
+ }
+ .nav-left ul i{
+    width: 28px;
+    margin: 0 15px;
+ }
+ .nav-user-icon  img{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+ }
+
+ .nav-user-icon {
+    margin-left: 30px ;
+ }
+ .search-box{
+    background: #efef;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding:0 15px; 
+ }
+ .search-box img{
+    width: 18px;            
+ }
+ .search-box input{
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    outline:none;
+    border: 0;
+
+ }
+ .online {
+    position: relative;
+ } 
+ .online::after{
+    content: ' ';
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #41db51;
+    position: absolute;
+    top: 0;
+    right:0;
+
+
+ }
+ .container{
+    display: flex;
+    justify-content: space-between;
+    padding:  13px 5%;
+ }
+ .left-sidebar{
+   
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    
+ }
+ .right-sidebar{
+  
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    background: var(--bg-color);
+    padding:20px;
+    border-radius: 4px;  
+    color: #626262;
+ }
+ .main-content{
+    flex-basis: 47%;
+   }
+   .imp-links a,.Shortcut-links a{ 
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      color:#626262;
+      width:fit-content;
+   }
+   .imp-links a i{
+      width:25px;
+      margin-right: 15px;
+   }
+   .imp-links a:last-child
+   {
+      color: #1876f2;
+   }
+   .imp-links{
+      border-bottom: 1px solid #ccc;
+   }
+   .Shortcut-links a img{
+      width:40px;
+      border-radius: 4px;
+      margin-right: 15px;
+      font-size: x-small;
+   }
+   .Shortcut-links a p{
+      color: #626262;
+      margin: 25px 0;
+      font-weight:500 ;
+   }
+   .sidebar-title{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+   }
+   .right-sidebar h4{
+      font-weight: 600;
+      font-size: 16px;
+   }
+    .sidebar-title a{
+       text-decoration: none;
+       color: #1876f2;
+       font-size: 12px;
+    }
+    .Event{
+      display: flex;
+      font-size: 14px;
+      margin-bottom: 20px;
+
+    }
+    .left-event{
+      border-radius: 10px;
+      height:65px;
+      width:65px;
+      margin-right: 15px;
+      padding-top:10px;
+      text-align: center;  
+      position: relative;     
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   }
+   .Event p{
+      font-size: 12px;
+
+   }
+   .Event a{
+        font-size: 12px;
+        text-decoration: none;
+        color: #1876f2;
+   }
+   .left-event span{
+      position: absolute;
+      bottom: 0;
+      left:0;
+       width: 100%;
+      background: #1876f2;  
+       color: #fff;
+       font-size: 10px;
+       padding: 4px 0;    
+   }
+   .sidebar-ads{
+      
+      margin-bottom: 20px;
+      border-radius: 4px;
+   }
+   .online-list{
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+   }
+   .online-list .online img{
+           width: 40px;
+           border-radius: 50px;
+
+   }
+   .online-list .online{
+      width:40px;
+      border-radius: 50%;
+      margin-right: 15px;
+   }
+   .online-list .online::after{
+            bottom: 5px;
+   }
+   .Story-gallery{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+   }
+   .story{
+      flex-basis: 18%;
+      padding-top: 32%;
+      position: relative;
+     
+      background-position: center;
+      background-size: cover;
+      border-radius: 10px;
+   }
+   .story img{
+      position: absolute;
+      width: 40px;
+      border-radius: 50%;
+      top: 10px;
+      left: 10px;
+      border: 5px solid #1876f2;
+
+   
+   }
+   .story p{
+      position: absolute;
+      bottom: 10px;
+      width:100%;
+      text-align: center;
+      color:#fff;
+      font-size: 14px;
+
+   }
+   .story1{
+      background-image: linear-gradient( transparent,rgba(0,0,0,0.5) ), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGrR1QgdaFVmP3uVbCdkh13ZEa6o8Zt4UY9A&usqp=CAU);
+   }
+   .story2{
+      background-image: linear-gradient( transparent,rgba(0,0,0,0.5) ), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx12N8cEH2if5dpI_0mteYwfpcoupMi13fAA&usqp=CAU);
+   }
+   .story3{
+      background-image: linear-gradient( transparent,rgba(0,0,0,0.5) ), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQszC1k7jKGB6kqvU8h1A9BKFzjmHdwSbbdzQ&usqp=CAU);
+   }
+   .story4{
+      background-image: linear-gradient( transparent,rgba(0,0,0,0.5) ), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjPyqzCCMQMn-RSo09IhJDIVX4MboCZ46d2g&usqp=CAU);
+   }
+   .story5{
+      background-image: linear-gradient( transparent,rgba(0,0,0,0.5) ), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgWh_wQfquVUPnotygp3ECaH44fjbA5GTvTA&usqp=CAU);
+   }
+
+  
+   .story.story1 img{
+
+        top: unset;
+        left: 50%;
+        bottom: 40px;
+        transform: translateX(-50%);
+        border: 0;
+        width: 35px;
+
+    }
+    .write-post-container{
+      width:100%;
+      background: var(--bg-color);
+      border-radius: 6px;
+      padding:20px;
+      color:#626262;
+    }
+    .user-profile{
+      display: flex;
+      align-items: center;
+    }
+    .user-profile img{
+      width: 35px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .user-profile p{
+   
+                 margin-bottom: -5px;
+                 font-weight: 500;
+                 color: #626262;
+
+    }
+    .user-profile small{
+      font-size: 12px;
+    }
+    .post-input-container{
+         padding-left: 55px;
+         padding-top: 20px;
+    }
+    
+    .post-input-container textarea{
+      width:100%;
+      border: 0;
+      outline:0;
+      border-bottom: 1px solid #ccc;
+      background: transparent;
+      resize: none;
+    }
+    .add-post-link{
+      display:flex;
+      margin-top: 10px;
+    }
+    .add-post-link a{
+       text-decoration: none;
+       display: flex;
+      align-items: center;
+       color: #626262;
+      margin-right: 30px;
+      font-size: 13px; 
+      }
+      .add-post-link i{
+         width: 20px;
+        
+      }
+      .post-container{
+         width:100%;
+         background: var(--bg-color);
+         border-radius: 6px;
+         padding:10px;
+         color: #626262;
+         margin:10px 0;
+         }
+         .user-profile span{
+            font-size: 10px;
+            color:grey;
+         }
+           .post-text{
+            color: slategrey;
+            margin:13px 0;
+            font-size: 12px;
+           } 
+           .post-text span{
+            color: grey;
+            font-weight: 400;
+           }
+           .post-text a{
+            color:#1876f2;
+            text-decoration: none;
+           }
+           .post-img{
+            width:100%;
+            border-radius: 4px;
+            margin-bottom: 5px;
+           }
+           .post-row{
+            display: flex;
+              align-items: center;
+             justify-content: space-between;
+           }
+           .activity-icons div i{
+            width:18px;
+            margin-right: 10px;
+           }     
+           .activity-icons div{
+            display: inline-flex;
+            align-items: center;
+            margin-right: 30px;
+           }   
+           .post-profile-icon{
+            display: flex;
+            align-items: center;
+           }
+           .post-profile-icon img{
+            width: 20px;
+            border-radius: 50%;
+            margin-right: 5px;
+           }
+           .post-row a{
+            color: silver;
+           }
+           .load-more-btn{
+            display: block;
+            margin: auto;
+            cursor: pointer;
+            padding: 5px 10px;
+            color: #626262;
+            background: transparent;
+            border-radius: 4px;
+           }
+           .footer{
+            text-align: center;
+            color: #9a9a9a;
+            padding:10px 0;
+            font-size: 13px;
+           }
+           .settings-menu{
+            position: absolute;
+            width: 90%;
+            max-width: 350px;
+            
+            background: var(--bg-color);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            border-radius: 4px;
+            overflow: hidden;
+            top:108%;
+            right:5%;
+             max-height: 0;
+            transition: max-height 0.2s;
+
+           }
+
+           .settings-menu-height{
+               max-height: 450px;
+
+           }
+
+
+           .user-profile a{
+            font-size: 12px;
+            color: #1876f2;
+
+            text-decoration: none;
+           }
+           .settings-menu-inner{
+            padding: 20px;
+           
+           }
+           p{
+            font-size: 15px;
+            padding: 5px;
+           }
+           .user-profile img{
+            width:30px;
+            height:30px;
+           }
+           .settings-menu hr{
+            border: 0;
+            height: 1px;
+            background: #9a9a9a;
+            margin: 12px 0;
+           }
+              .setting-links{
+               display: flex;
+               align-items: center;
+               margin: 30px 0;
+              }
+              .setting-links i{
+                 width: 40px;
+               
+                 border-radius: 50%;
+              }
+              .setting-links a{
+               display: flex;
+               flex: 1;
+               align-items: center;
+               justify-content: space-between;
+               text-decoration: none;
+               color: #626262;
+              }
+              #dark-btn{
+                    position: absolute;
+                    top: 20px;
+                     right:20px;
+                     background: #626262;       
+                     width: 45px;
+                     border-radius: 15px;
+                     padding: 2px 3px;
+                     cursor: pointer; 
+                     display: flex;
+                     transition:  padding-left 0.5s,background 0.5s;
+                           
+                  }
+                  #dark-btn span{
+                     width:18px;
+                     height: 18px;
+                     background: #fff;
+                     border-radius: 50%;
+                     display: inline-block;
+                  }
+                  #dark-btn.dark-btn-on{
+                     padding-left: 23px;
+                     background: white;
+
+                  }
+                  .setting-links i{
+                     color:#cbdffa;
+                  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </style>
+          <body> 
+
+            <nav> 
+                
+                    <div class="nav-left">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5WQoyHE3K61FmCFJxUpYp-9QmprSfNvKxUA&usqp=CAU"
+                        height="50px" width="30" class="logo">
+            
+                        <ul> 
+                               <i class="fa fa-bell" aria-hidden="true"></i>
+                               <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <i class="fa fa-video-camera" aria-hidden="true"></i>
+                          </ul>
+                          
+                        </div>
+                </div>
+                              <div class="nav-right">
+
+                    <div class="search-box">
+                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgCnDJAzptg-ZZHtYU7AP4d_G1GMZvq1pEPw&usqp=CAU">
+                       <input type="text" placeholder="search">
+                    </div>
+
+                    <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGrR1QgdaFVmP3uVbCdkh13ZEa6o8Zt4UY9A&usqp=CAU"
+                        height="50px" width="40px">
+                    </div>
+                 </div>
+
+
+
+                 <div class="settings-menu">
+
+                  <div id="dark-btn">
+                     <span></span>
+                  </div>
+                  <div class="settings-menu-inner">
+                        <div class="user-profile">
+                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGrR1QgdaFVmP3uVbCdkh13ZEa6o8Zt4UY9A&usqp=CAU"
+                        >
+                           <div> 
+                              <p>sneha gupta</p>
+                              <a href="#">See Your Profile</a>
+                           </div>
+                        </div>
+                       <hr>
+      
+                        <div class="user-profile">
+                           
+                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKpm-0FpuuF5zkMHRuG4Hms5kmFgZX0INFgA&usqp=CAU"
+                           width="30px" height="40px">
+                           <div> 
+                              <p>Give Feedback</p>
+                              <a href="#">Help us to improve the new design</a>
+                           </div>
+                        </div>
+                        <hr>
+
+                        <div class="setting-links">
+                           <i class="fa-solid fa-gear"></i>
+                        
+                        <a href="#">settings & privacy<i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      
+
+
+
+                        <div class="setting-links">
+                           <i class="fa-solid fa-circle-question"></i>
+
+                          
+                           <a href="#">Help & Support<i class="fa-solid fa-arrow-right-long"></i></a>
+                           </div>
+                         
+                           
+
+                           <div class="setting-links">
+                              <i class="fa-regular fa-moon"></i>
+                              <a href="#">Display & Support<i class="fa-solid fa-arrow-right-long"></i></a>
+                              </div>
+                         
+                              
+                              <div class="setting-links">
+                                 <i class="fa-light fa-right-from-bracket"></i>
+
+                                 <a href="#">logout<i class="fa-solid fa-arrow-right-long"></i></a>
+                                 </div>
+                                  
+                         
+                       
+                  </div>
+                 
+
+                 </div>
+
+
+
+
+            </nav>
+            <div class="container">
+
+                <div class="left-sidebar">
+                  <div class="imp-links">
+                     
+
+                    <a href=""><i class="fa-regular fa-radio"></i>LatestNews</a>
+                    
+                    <a href=""><i class="fa-solid fa-user-group"></i>Friend</a>
+                    <a href=""><i class="fa-sharp fa-solid fa-people-group"></i>Group</a>
+                    <a href=""><i class="fa-solid fa-cart-shopping"></i>MarketPlace</a>
+                    <a href=""><i class="fa-sharp fa-solid fa-film"></i>Watch</a>
+                    <a href ="#">See More</a>
+                  </div>
+
+                  <div class="Shortcut-links"><br/>
+                      <p> Your Shortcut</p><br/>
+                      <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgPEHz7Y8N9FKlTCArwbQMoq99xk1g5r_38w&usqp=CAU"
+                        height="40px" width="80px"> Web Developer</a>
+                      <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZcz4nHAuWh5cYpAM1S_55Rn0sjbtKz8zDPg&usqp=CAU"
+                        height="40px" width="80px"> Web Design course</a>
+                      <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSen6U6Dpa09EtbFv-kg79CPMP0gzUBduerBw&usqp=CAU"
+                        height="40px" width="80px"> Full Stack Development</a>
+                      <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjVTClEv7YdUx6aS44wlk7l_Ip3TD0mXR_ZA&usqp=CAU"
+                        height="40px" width="80px"> Website Experts</a>
+                  </div>
+                </div>
+
+                <div class="main-content">
+                 
+                     <div class="Story-gallery">
+                        <div class="story story1">
+                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBxNlFPgnUGTcdxKCu2Ch8YT0pzcaREBFrnw&usqp=CAU"
+                          >
+                        <p>Post Story</p>             
+                    </div>
+
+                    <div class="story story2">
+                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Uqq2Cbaj0p1063bM07KA4Vt1P2wBoFPy3Q&usqp=CAU"
+                    >
+                     <p>srishty choubey</p>             
+                     </div>
+
+
+
+                     <div class="story story3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFns-rvzQJdg1L0OU7Rmzp1PG_Q4pyMBoupw&usqp=CAU"
+                       >
+                     <p>aastha gupta</p>             
+                 </div>
+
+
+
+
+                 <div class="story story4">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBkl9nu5Z5plHw7F8U3ytSs_7aw5aEAEQbAg&usqp=CAU"
+                 >
+               <p>vaishnavi gupta</p>             
+           </div>
+
+
+           <div class="story story5">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGncXVCBomBDm-IYd0zzazeeBra1leveWGw&usqp=CAU"
+           >
+         <p>shreya pandey</p>             
+     </div>
+</div>
+
+           <div class="write-post-container">
+            <div class="user-profile">
+               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGrR1QgdaFVmP3uVbCdkh13ZEa6o8Zt4UY9A&usqp=CAU"
+            >
+               <div> 
+                  <p>sneha gupta</p>
+                  <small>Public <i class="fas fa-caret-down"></i></small>
+               </div>
+            </div>
+               
+            <div class="post-input-container">
+               <textarea rows="3" placeholder="what's on your mind,sneha?"></textarea>
+               <div class="add-post-link">
+                <a href="#"><i class="fa-sharp fa-solid fa-photo-film"></i>Live Video</a>
+                  <a href="#"><i class="fa-regular fa-image"></i>Photo/Video</a>
+                  <a href="#"><i class="fa-regular fa-face-smile"></i>Felling/Activity</a>
+               
+               </div>
+            </div>
+           </div>
+              
+           <div class="post-container">
+            <div class="post-row">
+               <div class="user-profile">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGrR1QgdaFVmP3uVbCdkh13ZEa6o8Zt4UY9A&usqp=CAU">
+              <div>
+                <p>sneha gupta</p>
+                <span>Nov 05 2021, 12:40</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+            </div>
+           
+            
+         <p class="post-text">  Subscribe <span>@Easy Tutortials</span> Youtube Channels To Watch More Video On Website Development 
+             And Ul Dssigns.<a href="#">#EasyTutorials</a>
+            <a href="#">#EasyTutorials</a></p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRkv8QJqckL01Wkn5q7nBkfhOOcRXRKuE9NA&usqp=CAU"
+             class="post-img">
+
+             <div class="post-row">
+               <div class="activity-icons">
+                  <div><i class="fa-solid fa-thumbs-up"></i>120</div>
+                  <div><i class="fa-solid fa-comment"></i>170</div>
+                  <div><i class="fa-solid fa-share"></i>180</div>
+               </div>
+               <div class="post-profile-icon">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGrR1QgdaFVmP3uVbCdkh13ZEa6o8Zt4UY9A&usqp=CAU">
+                      <i class="fas fa-caret-down"></i>
+               </div>
+             </div>
+</div>
+
+
+
+
+
+         
+
+<div class="post-container">
+   <div class="post-row">
+      <div class="user-profile">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBkl9nu5Z5plHw7F8U3ytSs_7aw5aEAEQbAg&usqp=CAU">
+     <div>
+       <p>vaishnavi gupta</p>
+       <span>Sep 12 2021, 12:40</span>
+     </div>
+   </div>
+   <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+   </div>
+  
+   
+<p class="post-text"> Like and share this vedio with friends,tag <span>@Easy Tutorials </span>facebbok
+   page on your post.Ask your doubts in the comment  
+   <a href="#">#EasyTutorials</a>
+   <a href="#">#YouTubeChannel</a></p>
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCS8ZQK7Gvo7m8I3HOTCTAWYPBlUc_qSd65w&usqp=CAU"
+    class="post-img">
+
+    <div class="post-row">
+      <div class="activity-icons">
+         <div><i class="fa-solid fa-thumbs-up"></i>50</div>
+         <div><i class="fa-solid fa-comment"></i>10</div>
+         <div><i class="fa-solid fa-share"></i>170</div>
+      </div>
+      <div class="post-profile-icon">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBkl9nu5Z5plHw7F8U3ytSs_7aw5aEAEQbAg&usqp=CAU"
+             height="20px" width="30px">
+             <i class="fas fa-caret-down"></i>
+      </div>
+    </div>
+</div>
+                
+
+
+
+
+<div class="post-container">
+   <div class="post-row">
+      <div class="user-profile">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFns-rvzQJdg1L0OU7Rmzp1PG_Q4pyMBoupw&usqp=CAU">
+     <div>
+       <p>aastha gupta</p>
+       <span>Oct 12 2021, 12:40</span>
+     </div>
+   </div>
+   <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+   </div>
+  
+   
+<p class="post-text"> Like and share this vedio with friends,tag <span>@Easy Tutorials</span>facebbok
+   page on your post.Ask your doubts in the comment 
+   <a href="#">#EasyTutorials
+   <a href="#">#YouTubeChannel</a></p>
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaeQWtq2zbto7B3xUsj37W8vVYjAQyd_QAmQ&usqp=CAU"
+   height="300px" width="600px">
+
+
+
+    <div class="post-row">
+      <div class="activity-icons">
+         <div><i class="fa-solid fa-thumbs-up"></i>150</div>
+         <div><i class="fa-solid fa-comment"></i>10</div>
+         <div><i class="fa-solid fa-share"></i>10</div>
+      </div>
+      <div class="post-profile-icon">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFns-rvzQJdg1L0OU7Rmzp1PG_Q4pyMBoupw&usqp=CAU"
+             height="20px" width="40px"><i class="fas fa-caret-down"></i>
+      </div>
+    </div>
+</div>
+                
+                
+
+
+         <button type="button" class="load-more-btn" >Load More</button>  
+              
+
+
+
+
+
+
+                </div>
+
+                <div class="right-sidebar">
+
+                   <div class="sidebar-title">
+                       
+                     <h4> Events</h4>
+                     <a href="#">See All</a>
+                   </div>
+
+                   <div class="Event">
+
+                     <div class="left-event">
+                        <h3>05</h3>
+                        <span>Nov</span>
+                     </div>
+
+                     <div class="right-event">
+                     <h4>Social Media</h4>
+                  
+                     <p><i class="fa-solid fa-location-dot"></i><br/>Bhawartal</p>
+                     <a href="#">More Info</a>
+                  </div>
+                   </div>
+
+                   <div class="Event">
+
+                     <div class="left-event">
+                        <h3>20</h3>
+                        <span>Nov</span>
+                     </div>
+
+                     <div class="right-event">
+                     <h4>Mobile Maeketing</h4>
+                  
+                     <p><i class="fa-solid fa-location-dot"></i><br/>Bhawartal</p>
+                     <a href="#">More Info</a>
+                  </div>
+                   </div>
+
+                   <div class="sidebar-title">
+                       
+                     <h4> Advertisement</h4>
+                     <a href="#">Close</a>
+                   </div>
+                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ54vn8DX6FhnfR0U1EHSzpgWmxC_ZhCzlldg&usqp=CAU"
+                     width="300px" height="150px"  class="sidebar-ads">
+                     <div class="sidebar-title">
+                       
+                        <h4> Conversation</h4>
+                        <a href="#">Hide Chat</a>
+                      </div>
+
+                         <div class="online-list">
+                           <div class="online">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Uqq2Cbaj0p1063bM07KA4Vt1P2wBoFPy3Q&usqp=CAU"
+                              >
+                           </div>
+                           <p>Srishty choubey</p>
+                         </div>
+
+                         <div class="online-list">
+                           <div class="online">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFns-rvzQJdg1L0OU7Rmzp1PG_Q4pyMBoupw&usqp=CAU"
+                               >
+                           </div>
+                           <p>aastha gupta</p>
+                         </div>
+
+                         <div class="online-list">
+                           <div class="online">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBkl9nu5Z5plHw7F8U3ytSs_7aw5aEAEQbAg&usqp=CAU" 
+                               >
+                           </div>
+                           <p>vaishnavi gupta </p>
+                         </div>
+
+                         <div class="online-list">
+                           <div class="online">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGncXVCBomBDm-IYd0zzazeeBra1leveWGw&usqp=CAU" 
+                               >
+                           </div>
+                           <p>shreya pandey </p>
+                         </div>
+           
+   
+
+            </div>
+            </div>
+            <div class="footer">
+               <p>copyright 2021 -Easy Tutorials Youtube Channels</p>
+            </div>
+           
+            
+
+
+           <script src="livescript.js"></script>
+          </body>
+</html>
